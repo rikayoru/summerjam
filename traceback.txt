@@ -1,0 +1,26 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 93, in script
+    "Текст письма:
+Exception: Sayer '"Текст письма:
+    Добрый день! 
+    Напоминаем, что у Вас сегодня в ХХ назначена встреча с журналистом издательства "' is not defined.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 93, in script
+    "Текст письма:
+  File "renpy/ast.py", line 681, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "renpy/ast.py", line 574, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer '"Текст письма:
+    Добрый день! 
+    Напоминаем, что у Вас сегодня в ХХ назначена встреча с журналистом издательства "' is not defined.
+
+Windows-10-10.0.19041
+Ren'Py 7.4.11.2266
+summerjam 1.0
+Sun Aug 13 21:04:58 2023
