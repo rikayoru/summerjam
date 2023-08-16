@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 11: invalid syntax
+    Character(u'Адриан', color="#000000", image = "adrian", callback name_callback, cb_name = "adrian")
+                                                                                        ^
+
+File "game/script.rpy", line 12: invalid syntax
+    Character('[myname]', color="#000000", image = "portr", callback name_callback, cb_name = "portr")
+                                                                                  ^
+
+Ren'Py Version: Ren'Py 7.4.11.2266
+Wed Aug 16 17:48:45 2023
