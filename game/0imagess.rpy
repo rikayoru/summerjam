@@ -1,18 +1,27 @@
+define config.mouse = {}
+
+define config.mouse["default"] = [("gui/mouse1.png", 0,0)]
+
 #************************************
 # Фоны
 #************************************CGs/common_album/common_1.webp
 
-image bg wew1 = "building1"
-image bg wew2 = "building2"
-image bg wew3 = "building3"
+image bg wew1 = "BG/building1.png"
+image bg wew2 = "BG/building2.png"
+image bg wew3 = "BG/building3.png"
 
+image bg lap = "BG/laptop.png" 
+image bg nworld = "BG/newworld.png" 
+image bg ofc1 = "BG/office1.png"
+image bg ofc2 = "BG/office2.png"
+image bg ghoome = "BG/wenthome.png"
 
 # ************************************
 # Постеры
 # ************************************
 
-image cg post2 = "building4"
-image cg post3 = "building5"
+image cg post2 = "BG/building4.png"
+image cg post3 = "BG/building5.png"
 
 
 #************************************
@@ -43,12 +52,20 @@ image cg post3 = "building5"
 image mc normal0 = At('side portr normal', sprite_highlight('portr'))
 image mc smile0 = At('side portr smile', sprite_highlight('portr'))
 
-image jace augh0 = At('Jace augh', sprite_highlight('jace'))
-image jace awkward0 = At('Jace awkward', sprite_highlight('jace'))
-image jace downcast0 = At('Jace downcast', sprite_highlight('jace'))
+image jace augh0 = At('jace augh', sprite_highlight('jace'))
+#  = At('jace augh', sprite_highlight('jace'))
+image jace awkward0 = At('jace awkward', sprite_highlight('jace'))
+#  = At('jace awkward', sprite_highlight('jace'))
+image jace downcast0 = At('jace downcast', sprite_highlight('jace'))
+#  = At('jace downcast', sprite_highlight('jace'))
+# images/char/hazel/hazel normal.png images/char/hazel/hazel smile.png
 
-image adr annoyed0 = At('Adrian annoyed', sprite_highlight('Adrian'))
-image adr awkward0 = At('Adrian awkward', sprite_highlight('Adrian'))
-image adr nervous0 = At('Adrian nervous', sprite_highlight('Adrian'))
-image adr smile0 = At('Adrian smile', sprite_highlight('Adrian'))
-image adr surprised0 = At('Adrian surprised', sprite_highlight('Adrian'))
+image hazel normal0 = At('hazel normal', sprite_highlight('hazel'))
+image hazel smile0 = At('hazel smile', sprite_highlight('hazel'))
+
+
+image adrian annoyed0 = At('adrian annoyed', sprite_highlight('adrian'))
+image adrian awkward0 = At('adrian awkward', sprite_highlight('adrian'))
+image adrian nervous0 = At('adrian nervous', sprite_highlight('adrian'))
+image adrian smile0 = At('adrian smile', sprite_highlight('adrian'))
+image adrian surprised0 = At('adrian surprised', sprite_highlight('adrian'))

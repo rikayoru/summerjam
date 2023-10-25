@@ -49,7 +49,7 @@ define gui.muted_color = u'#6684a3'
 define gui.hover_muted_color = u'#99adc1'
 
 ## Цвета, используемые в тексте диалогов и выборов.
-define gui.text_color = u'#404040'
+define gui.text_color = u'#DBE0EC'
 define gui.interface_text_color = u'#404040'
 
 
@@ -95,32 +95,38 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## Эти переменные контролируют, как диалог появляется на отдельной строчке.
 
 ## Высота текстового окна, содержащего диалог.
-define gui.textbox_height = 278
+define gui.textbox_height = 333
+# define gui.textbox_width = 333
+# 278
 
 ## Местоположение текстового окна по вертикали экрана. 0.0 — верх, 0.5 — центр и
 ## 1.0 — низ.
-define gui.textbox_yalign = 1.0
+define gui.textbox_yalign = 0.99
+define gui.textbox_xalign = 0.0
+# 1.0
 
 
 ## Местоположение имени говорящего персонажа по отношению к текстовому окну.
 ## Это могут быть целые значения в пикселях слева и сверху от начала окна или
 ## процентное отношение, например, 0.5 для центрирования.
 define gui.name_xpos = 360
-define gui.name_ypos = 0
+define gui.name_ypos = -30
 
 ## Горизонтальное выравнивание имени персонажа. Это может быть 0.0 для
 ## левоориентированного, 0.5 для центрированного и 1.0 для правоориентированного
 ## выравнивания.
-define gui.name_xalign = 0.0
+define gui.name_xalign = 0.01
 
 ## Ширина, высота и границы окна, содержащего имя персонажа или None, для
 ## автоматической размерки.
-define gui.namebox_width = None
-define gui.namebox_height = None
+define gui.namebox_width = 350
+# None
+define gui.namebox_height = 100
+# None
 
 ## Границы окна, содержащего имя персонажа слева, сверху, справа и снизу по
 ## порядку.
-define gui.namebox_borders = Borders(5, 5, 5, 5)
+define gui.namebox_borders = Borders(35, 5, 5, 15)
 
 ## Если True, фон текстового окна будет моститься (расширяться по эффекту
 ## плитки). Если False, фон текстового окна будет фиксированным.

@@ -1,7 +1,12 @@
+00auto-highlight.rpy
+00auto-highlight.rpyc
+0imagess.rpy
+0imagess.rpyc
 achievement.rpy
 achievement.rpyc
 gui.rpy
 gui.rpyc
+imagess.rpyc
 mech.rpy
 mech.rpyc
 options.rpy
@@ -10,7 +15,9 @@ screens.rpy
 screens.rpyc
 script.rpy
 script.rpyc
+test.rpy
 test.rpyc
+workplans.txt
 cache\bytecode.rpyb
 cache\pyanalysis.rpyb
 cache\screens.rpyb
@@ -95,10 +102,32 @@ gui\slider\vertical_hover_bar.png
 gui\slider\vertical_hover_thumb.png
 gui\slider\vertical_idle_bar.png
 gui\slider\vertical_idle_thumb.png
+images\Illustration.clip
+images\building1.png
+images\building2.png
+images\building3.png
+images\building4.png
+images\building5.png
+images\char\adrian\adrian annoyed.png
+images\char\adrian\adrian awkward.png
+images\char\adrian\adrian nervous.png
+images\char\adrian\adrian smile.png
+images\char\adrian\adrian surprised.png
+images\char\jace\jace augh.png
+images\char\jace\jace awkward.png
+images\char\jace\jace downcast.png
+images\side\side portr normal.png
+images\side\side portr smile.png
 saves\_reload-2-LT1.save
 saves\auto-1-LT1.save
+saves\auto-10-LT1.save
 saves\auto-2-LT1.save
 saves\auto-3-LT1.save
+saves\auto-5-LT1.save
+saves\auto-6-LT1.save
+saves\auto-7-LT1.save
+saves\auto-8-LT1.save
+saves\auto-9-LT1.save
 saves\navigation.json
 saves\persistent
 tl\None\common.rpym

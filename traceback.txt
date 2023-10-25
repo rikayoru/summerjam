@@ -1,26 +1,60 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 108, in script
-    "Текст письма:
-Exception: Sayer '"Текст письма:
-    Добрый день! 
-    Напоминаем, что у Вас сегодня в ХХ назначена встреча с журналистом издательства "' is not defined.
+After initialization, but before game start.
+  File "game/screens.rpy", line 251, in prepare_screen
+    screen quick_menu():
+  File "game/screens.rpy", line 251, in prepare
+    screen quick_menu():
+  File "game/screens.rpy", line 256, in prepare
+    if quick_menu:
+  File "game/screens.rpy", line 256, in prepare
+    if quick_menu:
+  File "game/screens.rpy", line 258, in prepare
+    hbox:
+  File "game/screens.rpy", line 258, in prepare
+    hbox:
+  File "game/screens.rpy", line 270, in prepare
+    textbutton _("Б.Загр") action QuickLoad(confirm=False, notify("message"))
+  File "game/screens.rpy", line 270, in prepare
+    textbutton _("Б.Загр") action QuickLoad(confirm=False, notify("message"))
+SyntaxError: non-keyword arg after keyword arg (screens.rpy, line 270)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 108, in script
-    "Текст письма:
-  File "renpy/ast.py", line 681, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "renpy/ast.py", line 574, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer '"Текст письма:
-    Добрый день! 
-    Напоминаем, что у Вас сегодня в ХХ назначена встреча с журналистом издательства "' is not defined.
+  File "renpy/bootstrap.py", line 331, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 662, in main
+    run(restart)
+  File "renpy/main.py", line 97, in run
+    renpy.display.screen.prepare_screens()
+  File "renpy/display/screen.py", line 955, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/screens.rpy", line 251, in prepare_screen
+    screen quick_menu():
+  File "game/screens.rpy", line 251, in prepare
+    screen quick_menu():
+  File "game/screens.rpy", line 256, in prepare
+    if quick_menu:
+  File "game/screens.rpy", line 256, in prepare
+    if quick_menu:
+  File "game/screens.rpy", line 258, in prepare
+    hbox:
+  File "game/screens.rpy", line 258, in prepare
+    hbox:
+  File "game/screens.rpy", line 270, in prepare
+    textbutton _("Б.Загр") action QuickLoad(confirm=False, notify("message"))
+  File "game/screens.rpy", line 270, in prepare
+    textbutton _("Б.Загр") action QuickLoad(confirm=False, notify("message"))
+  File "renpy/pyanalysis.py", line 714, in ast_eval
+    return self.ast_eval_literal(expr)[0]
+  File "renpy/pyanalysis.py", line 696, in ast_eval_literal
+    expr = py_compile(expr, 'eval', ast_node=True)
+  File "renpy/python.py", line 835, in py_compile
+    raise e
+SyntaxError: non-keyword arg after keyword arg (screens.rpy, line 270)
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 summerjam 1.0
-Wed Aug 16 17:23:50 2023
+Sat Aug 19 23:16:19 2023

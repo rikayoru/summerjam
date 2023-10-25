@@ -129,14 +129,22 @@ style say_thought is say_dialogue
 style namebox is default
 style namebox_label is say_label
 
+if new_textbox:
+    style window:
+        xalign 0.5
+        xfill True
+        yalign gui.textbox_yalign
+        ysize gui.textbox_height
 
-style window:
-    xalign 0.5
-    xfill True
-    yalign gui.textbox_yalign
-    ysize gui.textbox_height
+        background Image("gui/textbox0.png", xalign=0.5, yalign=1.0)   
+else:  
+    style window:
+        xalign 0.5
+        xfill True
+        yalign gui.textbox_yalign
+        ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+        background Image("gui/textbox.png", xalign=0.5, yalign=1.0) 
 
 style namebox:
     xpos gui.name_xpos
@@ -256,10 +264,10 @@ screen quick_menu():
             textbutton _("Назад") action Rollback()
             textbutton _("История") action ShowMenu('history')
             textbutton _("Пропуск") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Авто") action Preference("auto-forward", "toggle")
+            textbutton _("РЕСТАРТ") action Jump('start')
             textbutton _("Сохранить") action ShowMenu('save')
             textbutton _("Б.Сохр") action QuickSave()
-            textbutton _("Б.Загр") action QuickLoad()
+            textbutton _("Б.Загр") action QuickLoad() 
             textbutton _("Опции") action ShowMenu('preferences')
 
 

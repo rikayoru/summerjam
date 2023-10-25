@@ -325,6 +325,10 @@ translate None strings:
     old "Quick save complete."
     new "Быстрое сохранение завершено."
 
+    # renpy/common/00action_file.rpy:938
+    old "Quick load complete."
+    new "Быстрая загрузка завершена."
+
     # renpy/common/00action_file.rpy:930
     old "Quick save."
     new "Быстрое сохранение"

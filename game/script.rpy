@@ -21,9 +21,7 @@ define mc = Character('[myname]', color="#000000", image = "portr") #, callback=
 # Вместо использования оператора image можете просто складывать все ваши файлы изображений в папку images.
 # Например, сцену bg room можно вызвать файлом "bg room.png", а eileen happy — "eileen happy.webp", и тогда они появятся в игре.
 
-# xxx алеее Игра начинается здесь:
-# вьдыопдвлподапдвлавадриоа
-# вдаопдвалпд
+# можно сделать выборы через имеджбаттоны и поставить модуль хз чтобы нельзя пропустить
 label start:
     $ myname = "Эмма"
     default maxlove = 100 # Добавляем переменную с максимальным уровнем отношений.
@@ -58,11 +56,32 @@ label start:
             # Для горизонтальной полоски нужно заменить vbar на bar, и вместо bottom_bar и top_bar укажем параметры left_bar и right_bar.
             bottom_bar Frame("gui/bar/bottom1.png",10,10)
             top_bar Frame("gui/bar/top1.png",10,10)
-    
+    screen pro_buttons:
+        # style window # modal True  СТОПАЕТ ИГРУ
+        imagebutton:
+            xalign 0.91
+            yalign 0.8
+            idle "gui/button/save.png"
+            hover "gui/button/save.png"
+            action QuickSave()
+        imagebutton:
+            xalign 0.99
+            yalign 0.8
+            idle "gui/button/load.png"
+            hover "gui/button/load.png"
+            action QuickLoad()
+        imagebutton:
+            xalign 0.985
+            yalign 0.95
+            idle "gui/button/skip.png"
+            hover "gui/button/skip.png"
+            action Skip() alternate Skip(fast=True, confirm=True)
+            # gui/button/button.png 
+            
+
     show screen lovemeter # В игре нам остаётся только показать наш экран.
     show screen info
     scene bg room
-
     # $ myname = "Эмма" #прописать имя ГГ по умолчанию
 
     # init:
@@ -93,7 +112,7 @@ label strtgame:
     show hazel normal0 at left
     adr smile0 "Первые проекты аудитория встретила с большим успехом. Последние несколько – мягко говоря не очень."
     # $ new_textbox = True
-   
+    show screen pro_buttons
     # scene bg wew3 with dissolv
 
     hh smile0 "sgfdgfhdgdjfu"
