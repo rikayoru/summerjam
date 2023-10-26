@@ -101,8 +101,7 @@ define gui.textbox_height = 333
 
 ## Местоположение текстового окна по вертикали экрана. 0.0 — верх, 0.5 — центр и
 ## 1.0 — низ.
-define gui.textbox_yalign = 0.99
-define gui.textbox_xalign = 0.0
+define gui.textbox_yalign = 0.98
 # 1.0
 
 
@@ -246,7 +245,7 @@ define config.thumbnail_height = 216
 
 ## Количество колонок и рядов в таблице слотов.
 define gui.file_slot_cols = 3
-define gui.file_slot_rows = 2
+define gui.file_slot_rows = 1
 
 
 ## Позиционирование и Интервалы ################################################

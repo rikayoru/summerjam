@@ -430,10 +430,10 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     style_prefix "game_menu"
 
-    if main_menu:
-        add gui.main_menu_background
-    else:
-        add gui.game_menu_background
+    # if main_menu:
+    #     add gui.main_menu_background
+    # else:
+    #     add gui.game_menu_background
 
     frame:
         style "game_menu_outer_frame"
@@ -480,12 +480,12 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
-    use navigation
+    # use navigation
 
-    textbutton _("Вернуться"):
-        style "return_button"
+    # textbutton _("Вернуться"):
+    #     style "return_button"
 
-        action Return()
+    #     action Return()
 
     label title
 
@@ -675,7 +675,7 @@ screen file_slots(title):
                     textbutton _("{#quick_page}Б") action FilePage("quick")
 
                 ## range(1, 10) задаёт диапазон значений от 1 до 9.
-                for page in range(1, 10):
+                for page in range(1, 4):
                     textbutton "[page]" action FilePage(page)
 
                 textbutton _(">") action FilePageNext()
@@ -722,36 +722,75 @@ style slot_button_text:
 screen preferences():
 
     tag menu
-
-    use game_menu(_("Настройки"), scroll="viewport"):
-
+    
+    use game_menu(_("")):
+        
         vbox:
-
+            
             hbox:
                 box_wrap True
 
                 if renpy.variant("pc") or renpy.variant("web"):
 
                     vbox:
-                        style_prefix "radio"
-                        label _("Режим экрана")
-                        textbutton _("Оконный") action Preference("display", "window")
-                        textbutton _("Полный") action Preference("display", "fullscreen")
+                        imagebutton:
+                            xalign 0.99
+                            yalign 0.8
+                            # if window":
+                            idle "gui/button/button_off.png"
+                            selected_idle "gui/button/button_on.png"
+                            # 
+                            action Preference("display", "window")
+                        imagebutton:
+                            xalign 0.99
+                            yalign 0.8
+                            idle "gui/button/button_off.png"
+                            selected_idle "gui/button/button_on.png"
+                            
+                            action Preference("display", "fullscreen")
+                        xalign 1.0
+                        text "Оконный" outlines [(1, "#000", 0, 0)]
+                        text "Полный" outlines [(1, "#000", 0, 0)]
+                        # style_prefix "radio"
+                        # label _("Режим экрана")
+                        # textbutton _("Оконный")
+                        # textbutton _("Полный") action Preference("display", "fullscreen")
 
-                vbox:
-                    style_prefix "radio"
-                    label _("Сторона отката")
-                    textbutton _("Отключено") action Preference("rollback side", "disable")
-                    textbutton _("Левая") action Preference("rollback side", "left")
-                    textbutton _("Правая") action Preference("rollback side", "right")
+                # vbox:
+                #     style_prefix "radio"
+                #     label _("Сторона отката")
+                #     textbutton _("Отключено") action Preference("rollback side", "disable")
+                #     textbutton _("Левая") action Preference("rollback side", "left")
+                #     textbutton _("Правая") action Preference("rollback side", "right")
 
                 vbox:
                     style_prefix "check"
                     label _("Пропуск")
-                    textbutton _("Всего текста") action Preference("skip", "toggle")
-                    textbutton _("После выборов") action Preference("after choices", "toggle")
-                    textbutton _("Переходов") action InvertSelected(Preference("transitions", "toggle"))
+                    imagebutton:
+                        xalign 0.99
+                        yalign 0.8
+                        idle "gui/button/button_off.png"
+                        selected_idle "gui/button/button_on.png"
 
+                        action Preference("skip", "toggle")
+                    imagebutton: 
+                        xalign 0.99
+                        yalign 0.8
+                        idle "gui/button/button_off.png"
+                        selected_idle "gui/button/button_on.png"
+
+                        action Preference("after choices", "toggle")
+                    imagebutton:
+                        xalign 0.99
+                        yalign 0.8
+                        idle "gui/button/button_off.png"
+                        selected_idle "gui/button/button_on.png"
+
+                        action InvertSelected(Preference("transitions", "toggle"))
+                    xalign 1.0
+                    text "Всего текста" outlines [(1, "#000", 0, 0)]
+                    text "После выборов" outlines [(1, "#000", 0, 0)]
+                    text "Переходов" outlines [(1, "#000", 0, 0)]
                 ## Дополнительные vbox'ы типа "radio_pref" или "check_pref"
                 ## могут быть добавлены сюда для добавления новых настроек.
 
@@ -1138,6 +1177,46 @@ style help_label_text:
 ## Дополнительные экраны
 ################################################################################
 
+## Экран ввода имени #####
+
+# screen set_name(prompt, yes_action, no_action):
+
+#     ## Гарантирует, что другие экраны будут недоступны, пока показан этот экран.
+#     modal True
+
+#     zorder 200
+
+#     style_prefix "set_name"
+
+#     add "gui/overlay/confirm.png"
+
+#     frame:
+
+#         vbox:
+#             xalign .5
+#             yalign .5
+#             spacing 45
+
+#             text prompt style "input_prompt"
+#             input id "input"
+
+#             # label _(message):
+#             #     style "confirm_prompt"
+#             #     xalign 0.5
+
+#             hbox:
+#                 xalign 0.5
+#                 spacing 150
+
+#                 textbutton _("Да") action yes_action
+#                 textbutton _("Нет") action no_action
+
+#     ## Правый клик и esc, как ответ "Нет".
+#     key "game_menu" action no_action
+
+# style confirm is default
+
+    
 
 ## Экран подтверждения #########################################################
 ##

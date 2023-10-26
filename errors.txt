@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "renpy/common/00action_file.rpy", line 948: non-keyword arg after keyword arg
-    Notify(message),
-    
+File "game/test.rpy", line 134: choice menuitem expects a non-empty block.
+    "Эта игра, для чего она?":
+                              ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Sat Aug 19 23:11:48 2023
+Wed Oct 25 17:58:44 2023

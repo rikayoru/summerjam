@@ -8,8 +8,9 @@ init python:
             renpy.show(images, what=im.MatrixColor(images + ".png", im.matrix.brightness(-0.5), im.matrix.saturation(0.1)))
             #
 # Определение персонажей игры.
-define adr = Character('Адриан', color="#000000", image = "adrian", callback=name_callback, cb_name = "adrian")
+define adr = Character('Трик', color="#000000", image = "adrian", callback=name_callback, cb_name = "adrian")
 define hh = Character('hazel', color="#000000", image = "hazel", callback=name_callback, cb_name = "hazel")
+define t = Character('Трик', color="#000000", image = "adrian", callback=name_callback, cb_name = "adrian")
 
 # define new_textbox = False
 # define jac = Character('Джейс', color="#000000", image = "jace", callback=name_callback, cb_name = "jace")
@@ -17,7 +18,7 @@ define hh = Character('hazel', color="#000000", image = "hazel", callback=name_c
 
 define mc = Character('[myname]', color="#000000", image = "portr") #, callback=name_callback, cb_name = "portr" 
 # При объявлении ГГ  вместо имени пишется переменная с именем в квадратных скобках
-
+define persistent.walkthrouh = 0
 # Вместо использования оператора image можете просто складывать все ваши файлы изображений в папку images.
 # Например, сцену bg room можно вызвать файлом "bg room.png", а eileen happy — "eileen happy.webp", и тогда они появятся в игре.
 
@@ -38,6 +39,7 @@ label start:
                     xalign 1.0
                     text "Очки отношений: " outlines [(1, "#000", 0, 0)]
                     text "[love_jacky]" xalign 1.0 outlines [(1, "#000", 0, 0)]
+                    text "[persistent.walkthrouh]" xalign 1.0 outlines [(1, "#000", 0, 0)]
                     #textbutton _("+10") action AddToSet(love_jacky, +10)
                     #textbutton _("-10") action AddToSet(love_jacky, =-10)
     screen lovemeter: # Экран с полоской отношений Джеки
@@ -61,14 +63,14 @@ label start:
         imagebutton:
             xalign 0.91
             yalign 0.8
-            idle "gui/button/save.png"
-            hover "gui/button/save.png"
+            idle "gui/button/q_save.png"
+            hover "gui/button/q_save.png"
             action QuickSave()
         imagebutton:
             xalign 0.99
             yalign 0.8
-            idle "gui/button/load.png"
-            hover "gui/button/load.png"
+            idle "gui/button/q_load.png"
+            hover "gui/button/q_load.png"
             action QuickLoad()
         imagebutton:
             xalign 0.985
@@ -78,7 +80,7 @@ label start:
             action Skip() alternate Skip(fast=True, confirm=True)
             # gui/button/button.png 
             
-
+    hide screen pro_buttons
     show screen lovemeter # В игре нам остаётся только показать наш экран.
     show screen info
     scene bg room
@@ -96,11 +98,16 @@ label start:
             jump strtgame
         "Test":
             jump testt
+        "Разговор по душам":
+            call givename
+            "Я рад с тобой встретиться, [myname]."
+            jump small_talk
     "skerefkjrfeof"
 
 label strtgame:
     # $ new_textbox = False
     # scene bg wew1
+    # show screen set_name
     scene bg wew2 with dissolve
     # show portr normal0 at left
     mc normal "\"ГеймстудияВперед\" – небольшая, но развивающаяся компания, которая движется вперед и разрабатывает супер игры, не обделяя свои проекты инновационными механиками и нестандартными решениями."

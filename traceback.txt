@@ -1,60 +1,48 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/screens.rpy", line 251, in prepare_screen
-    screen quick_menu():
-  File "game/screens.rpy", line 251, in prepare
-    screen quick_menu():
-  File "game/screens.rpy", line 256, in prepare
-    if quick_menu:
-  File "game/screens.rpy", line 256, in prepare
-    if quick_menu:
-  File "game/screens.rpy", line 258, in prepare
-    hbox:
-  File "game/screens.rpy", line 258, in prepare
-    hbox:
-  File "game/screens.rpy", line 270, in prepare
-    textbutton _("Б.Загр") action QuickLoad(confirm=False, notify("message"))
-  File "game/screens.rpy", line 270, in prepare
-    textbutton _("Б.Загр") action QuickLoad(confirm=False, notify("message"))
-SyntaxError: non-keyword arg after keyword arg (screens.rpy, line 270)
+While running game code:
+  File "game/script.rpy", line 111, in script
+    scene bg wew2 with dissolve
+Exception: Required parameter prompt has no value.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 331, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 662, in main
-    run(restart)
-  File "renpy/main.py", line 97, in run
-    renpy.display.screen.prepare_screens()
-  File "renpy/display/screen.py", line 955, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/screens.rpy", line 251, in prepare_screen
-    screen quick_menu():
-  File "game/screens.rpy", line 251, in prepare
-    screen quick_menu():
-  File "game/screens.rpy", line 256, in prepare
-    if quick_menu:
-  File "game/screens.rpy", line 256, in prepare
-    if quick_menu:
-  File "game/screens.rpy", line 258, in prepare
-    hbox:
-  File "game/screens.rpy", line 258, in prepare
-    hbox:
-  File "game/screens.rpy", line 270, in prepare
-    textbutton _("Б.Загр") action QuickLoad(confirm=False, notify("message"))
-  File "game/screens.rpy", line 270, in prepare
-    textbutton _("Б.Загр") action QuickLoad(confirm=False, notify("message"))
-  File "renpy/pyanalysis.py", line 714, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-  File "renpy/pyanalysis.py", line 696, in ast_eval_literal
-    expr = py_compile(expr, 'eval', ast_node=True)
-  File "renpy/python.py", line 835, in py_compile
-    raise e
-SyntaxError: non-keyword arg after keyword arg (screens.rpy, line 270)
+  File "game/script.rpy", line 111, in script
+    scene bg wew2 with dissolve
+  File "renpy/ast.py", line 1443, in execute
+    renpy.exports.with_statement(trans, paired)
+  File "renpy/exports.py", line 1684, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "renpy/display/core.py", line 2762, in do_with
+    clear=clear)
+  File "renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3737, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/screen.py", line 436, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3737, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/screen.py", line 447, in per_interact
+    self.update()
+  File "renpy/display/screen.py", line 637, in update
+    self.screen.function(**self.scope)
+  File "renpy/ast.py", line 159, in apply_arguments
+    return parameters.apply(args, kwargs, ignore_errors)
+  File "renpy/ast.py", line 123, in apply
+    raise Exception("Required parameter %s has no value." % name)
+Exception: Required parameter prompt has no value.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 summerjam 1.0
-Sat Aug 19 23:16:19 2023
+Thu Oct 26 10:34:29 2023
